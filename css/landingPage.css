@@ -1,3 +1,12 @@
 .feature-container {
     padding-top: 100px;
+    margin: 0 auto;
+    background: lightblue;
+    min-height: 1000px;
+}
+
+.feature-div {
+  margin: auto;
+   text-align: center;
+   max-width: 200px;
 }
