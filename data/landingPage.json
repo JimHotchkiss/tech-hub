@@ -1,0 +1,27 @@
+{"features" : [
+    {
+        "id": "msa","title":"Money Settings","iconUrl":"../images/msa-logo.png", "description":"The most current money settings for our 1688 platform and legacy equipment"
+    },
+    {
+        "id": "olympus","title":"1688 Olympus Settings","iconUrl":"../images/olympus-storz-logo.png", "description":"The most current Olympus settings for our 1688 platform"
+       },
+    {
+        "id": "storz","title":"1688 Storz Settings","iconUrl":"../images/olympus-storz-logo.png", "description":"The most current Storz settings for our 1688 platform and selected legacy equipment"
+    },
+    {
+        "id": "printer","title":"Printer Settings","iconUrl":"../images/printer-logo.png", "description":"The most current settings for the SDP1000"
+    },
+    {
+        "id": "default","title":"Default Settings","iconUrl":"../images/default-logo.png", "description":"The default settings for the 1688 CCU and many of our legacy CCUs"
+    },
+    {
+        "id": "contact","title":"Contact Us","iconUrl":"../images/contact-logo.png", "description":"Need help? Reach out to the Tech Support Team early and often."
+    },
+    {
+        "id": "share","title":"Share Settings","iconUrl":"../images/share-logo.png", "description":"Do you have settings that are perfectly dialed in? Share them here with the Sales Force team."
+    },
+    {
+        "id": "idea","title":"Got An Idea?","iconUrl":"../images/idea-logo.png", "description":"Got an idea for a feature for the Tech HUB App? Share it! We’d love to hear your idea."
+    }
+    ]
+ }
