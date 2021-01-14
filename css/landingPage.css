@@ -1,12 +1,85 @@
 .feature-container {
-    padding-top: 100px;
+    padding-top: 85px;
+    padding-bottom: 16px;
     margin: 0 auto;
-    background: lightblue;
     min-height: 1000px;
+    background: #262626; 
+    
 }
 
 .feature-div {
-  margin: auto;
+  margin: 16px auto;
    text-align: center;
-   max-width: 200px;
+   max-width: 300px;
+   padding: 16px;
+   background: #ffb600;
+   border-radius: 5px;
+}
+
+.feature-img-title-div {
+  display: flex;
+}
+
+.feature-title-div {
+  font-size: 22px;
+  font-weight: 900;
+  color: #262626;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+.feature-description-div {
+  font-size: 14px;
+  font-weight: 300;
+  padding: 16px 8px;
+  color: #262626;
+  text-align: left;
+}
+
+.feature-img-div {
+  margin-top: 3px;
+  width: 60px;
+  height: 60px;
+  opacity: 1;
+  
+}
+
+#msa-img-url {
+  background: transparent url("../images/msa-logo.png") 0% 0% no-repeat padding-box;
+  background-size: 60px;
+}
+
+#olympus-img-url {
+  background: transparent url("../images/olympus-storz-logo.png") 0% 0% no-repeat padding-box;
+  background-size: 60px;
+}
+
+#storz-img-url {
+  background: transparent url("../images/olympus-storz-logo.png") 0% 0% no-repeat padding-box;
+  background-size: 60px;
+}
+
+#printer-img-url {
+  background: transparent url("../images/printer-logo.png") 0% 0% no-repeat padding-box;
+  background-size: 60px;
+}
+
+#default-img-url {
+  background: transparent url("../images/default-logo.png") 0% 0% no-repeat padding-box;
+  background-size: 60px;
+}
+
+#contact-img-url {
+  background: transparent url("../images/contact-logo.png") 0% 0% no-repeat padding-box;
+  background-size: 60px;
+}
+
+#share-img-url {
+  background: transparent url("../images/share-logo.png") 0% 0% no-repeat padding-box;
+  background-size: 60px;
+}
+
+#idea-img-url {
+  background: transparent url("../images/idea-logo.png") 0% 0% no-repeat padding-box;
+  background-size: 60px;
 }
