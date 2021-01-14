@@ -4,7 +4,6 @@ class NavBar {
   }
 
   renderNavBar() {
-    console.log("rendernavbar")
     const root = document.getElementById("root")
 
     const navbar = document.createElement("div")

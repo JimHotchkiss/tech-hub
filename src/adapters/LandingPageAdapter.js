@@ -1,5 +1,5 @@
 // This 'Adapter' connects us to the api, the data
-class landingPageAdapter {
+class LandingPageAdapter {
   constructor() {
     this.baseUrl = "../../data/landingPage.json"
   }

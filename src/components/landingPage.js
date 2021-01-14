@@ -1,7 +1,7 @@
 class LandingPage {
   constructor() {
     this.features = []
-    this.adapter = new landingPageAdapter()
+    this.adapter = new LandingPageAdapter()
     this.fetchAndLoadLandingPageFeatures()
   }
 
@@ -16,14 +16,18 @@ class LandingPage {
       .then(() => {
         this.render()
       })
+      .then(() => {
+        this.featureEventListener()
+      })
   }
 
   render() {
     const root = document.getElementById("root")
     const featureContainer = document.createElement("div")
     featureContainer.setAttribute("class", "feature-container")
+    featureContainer.setAttribute("id", "feature-container")
     this.features.map((feature) => {
-      console.log(feature)
+      // Feature Div
       const featureDiv = document.createElement("div")
       featureDiv.setAttribute("class", "feature-div")
       featureDiv.setAttribute("id", feature.id)
@@ -49,10 +53,23 @@ class LandingPage {
       descriptionDiv.setAttribute("class", "feature-description-div")
       descriptionDiv.innerText = feature.description
 
+      // Append Feature div to include img, title and description divs
       featureDiv.appendChild(imgTitleDiv)
       featureDiv.appendChild(descriptionDiv)
       featureContainer.appendChild(featureDiv)
       root.appendChild(featureContainer)
     })
+  }
+  featureEventListener() {
+    const featureDiv = document.getElementsByClassName("feature-div")
+    for (let item of featureDiv) {
+      item.addEventListener("click", () => {
+        this.features.map((feature) => {
+          if (feature.id === item.id) {
+            new Feature(feature)
+          }
+        })
+      })
+    }
   }
 }
