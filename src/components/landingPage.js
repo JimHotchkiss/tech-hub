@@ -44,7 +44,7 @@ class LandingPage {
 
       // Title Div
       const titleDiv = document.createElement("div")
-      titleDiv.setAttribute("class", "feature-title-div")
+      titleDiv.setAttribute("class", "landingpage-title-div")
       titleDiv.innerText = feature.title
       imgTitleDiv.appendChild(titleDiv)
 

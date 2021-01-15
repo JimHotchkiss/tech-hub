@@ -8,7 +8,7 @@ This rebuild will leverage object oriented design, in order to make the code eas
 * Adapter Folder - the adapter folder will house objects that communicate with the data. 
 * Components Folder - the components folder will house objects that render the data
 
-# Order and details of the order files executed 
+# Order and details of the files executed 
 1.) We have an index.js - This is the file that will kick off our application
 2.) In index.js, we instantiate a new instance of the App class
 3.) The App class does one thing, and that is to, in its constructor(), instantiate an instance of landingPage
@@ -29,7 +29,12 @@ This rebuild will leverage object oriented design, in order to make the code eas
     a. The FeatureAdapter, with the feature id, makes a fetch request to the api of the particular feature to retrieve that feature's data
 4.) An instance method, clearLandingPage(), is also created.    
     a. This clears the landing page's Html
-5.) Once clearLandingPage() has been executed, the method renderFeature() 
+5.) Once clearLandingPage() has been executed, other methods are executed
+    a. The data associated with feature fetched and loaded with the fethAndLoadFeatureComponents() method
+    b. The feature components are then rendered to the DOM with the renderComponents() method
+
+// Note: 1/15/21 Started to build a 'updateNavbar' module. Not sure if it will keep
+
 
 // 'return' statement ends function execution, and specifies a value to be returned to the function caller
 

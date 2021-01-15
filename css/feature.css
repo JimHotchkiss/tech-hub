@@ -1,0 +1,28 @@
+.components-container {
+ padding-top: 70px;
+}
+
+.feature-title-div {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 24px auto;
+    text-align: center;
+    color: #ffb600;
+}
+
+.component-div {
+    margin: 24px auto;
+   text-align: center;
+   max-width: 300px;
+   padding: 16px;
+   background: #ffb600;
+   border-radius: 5px;
+   transition: 0.4s;
+   }
+
+   .component-div:hover {
+       cursor: pointer;
+   background: #484848;
+   color: #fff;
+   transition: 0.4s;
+   }
