@@ -7,7 +7,7 @@ class Feature {
     this.iconUrl = featureObj.iconUrl
     this.description = featureObj.description
     this.featureAdapter = new FeatureAdapter(this.id)
-    this.updateNavbar = new UpdateNavbar(featureObj)
+    this.upNavbar = new NavBar().updateNavBar(featureObj)
     this.clearLandingPage()
     this.fetchAndLoadFeatureComponents()
   }

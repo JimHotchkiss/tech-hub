@@ -2,7 +2,13 @@ class LandingPage {
   constructor() {
     this.features = []
     this.adapter = new LandingPageAdapter()
+    this.navbar = new NavBar()
     this.fetchAndLoadLandingPageFeatures()
+    this.callRenderNavbar()
+  }
+
+  callRenderNavbar() {
+    this.navbar.renderNavBar()
   }
 
   fetchAndLoadLandingPageFeatures() {
@@ -14,14 +20,14 @@ class LandingPage {
         })
       })
       .then(() => {
-        this.render()
+        this.renderLandingPage()
       })
       .then(() => {
         this.featureEventListener()
       })
   }
 
-  render() {
+  renderLandingPage() {
     const root = document.getElementById("root")
     const featureContainer = document.createElement("div")
     featureContainer.setAttribute("class", "feature-container")

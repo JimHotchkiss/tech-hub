@@ -19,6 +19,9 @@ This rebuild will leverage object oriented design, in order to make the code eas
     d. The 'fetchAndLoadLandingpageFeatures()' method, fetches the data
     e. Once the 'adapter', using the 'getLandingPageFeatures()' method has connected to the api, the collection of objects is than saved to the 'feature' variable 
     g. The feature objects are then rendered to the landing page, throught the 'render()' method
+    h. We also have a navbar class.
+        i.) This class has a 'renderNavbar()' method that is called in the LandpingPage class
+        ii.) It also has a 'updateNavbar()' method. This method will be used to update the navbar to reflect changes in icons, text and functionality.
 5.) Our LandingPageAdapter connects to the backend, in this case, our landingPageJson file
 
 # Feature class 
@@ -33,7 +36,8 @@ This rebuild will leverage object oriented design, in order to make the code eas
     a. The data associated with feature fetched and loaded with the fethAndLoadFeatureComponents() method
     b. The feature components are then rendered to the DOM with the renderComponents() method
 
-// Note: 1/15/21 Started to build a 'updateNavbar' module. Not sure if it will keep
+// Note: 1/15/21 Started to build a 'updateNavbar' module. Not sure if it will keep 
+    # Update: I want to be able to define a method, in the Navbar object, call 'updateNavbar', and call this method in other locations of the app. 
 
 
 // 'return' statement ends function execution, and specifies a value to be returned to the function caller
