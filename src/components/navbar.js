@@ -66,6 +66,7 @@ class NavBar {
   updateNavbarIcons(featureObj) {
     console.log(featureObj)
     const iconDiv = document.getElementById("icon-div")
-    iconDiv.style.backgroundImage = `url(../images/${featureObj.featureIconUrl})`
+    iconDiv.style.backgroundImage = ``
+    iconDiv.style.width = "0px"
   }
 }
