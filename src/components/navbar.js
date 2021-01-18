@@ -11,6 +11,8 @@ class NavBar {
 
     const iconDiv = document.createElement("div")
     iconDiv.setAttribute("class", "icon-div")
+    iconDiv.setAttribute("id", "icon-div")
+    iconDiv.style.backgroundImage = "url('../images/Grey.png')"
 
     const iconTextSpanDiv = document.createElement("div")
     iconTextSpanDiv.setAttribute("class", "icon-text-span-div")
@@ -50,7 +52,7 @@ class NavBar {
 
   updateNavbarIcons(featureObj) {
     this.addHomeIcon()
-    this.addBackBtnIcon()
+    this.updateFeatureIcon(featureObj)
   }
 
   addHomeIcon() {
@@ -59,5 +61,11 @@ class NavBar {
       "afterend",
       '<div id="navbar-home-icon" class="navbar-home-icon"></div>'
     )
+  }
+
+  updateNavbarIcons(featureObj) {
+    console.log(featureObj)
+    const iconDiv = document.getElementById("icon-div")
+    iconDiv.style.backgroundImage = `url(../images/${featureObj.featureIconUrl})`
   }
 }

@@ -1,6 +1,6 @@
 {"features" : [
     {
-        "id": "msa","title":"Money Settings","iconUrl":"../images/msa-logo.png", "description":"The most current money settings for our 1688 platform and legacy equipment"
+        "id": "msa","title":"Money Settings","featureIconUrl": "../images/msa-yellow.png","iconUrl":"../images/msa-logo.png", "description":"The most current money settings for our 1688 platform and legacy equipment"
     },
     {
         "id": "olympus","title":"1688 Olympus Settings","iconUrl":"../images/olympus-storz-logo.png", "description":"The most current Olympus settings for our 1688 platform"

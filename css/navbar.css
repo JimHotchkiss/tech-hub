@@ -33,12 +33,12 @@
   }
 
   .icon-div {
-      margin-top: 3px;
+    margin-top: 5px;
     width: 55px;
     height: 55px;
-    background: transparent url("../images/Grey.png") 0% 0% no-repeat padding-box;
+    /* background: transparent url("../images/Grey.png") 0% 0% no-repeat padding-box; */
     opacity: 1;
-    background-size: 60px;
+    background-size: 55px;
   }
 
   .navbar-home-icon {

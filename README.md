@@ -35,6 +35,8 @@ This rebuild will leverage object oriented design, in order to make the code eas
 5.) Once clearLandingPage() has been executed, other methods are executed
     a. The data associated with feature fetched and loaded with the fethAndLoadFeatureComponents() method
     b. The feature components are then rendered to the DOM with the renderComponents() method
+6.) An instance method of updateNavbar() is instantiate. This is done by creating a new Navbar and calling on that class the 'updateNavbar()' class method.
+    a.) This will update text, icons and even functionality, when necessary. 
 
 // Note: 1/15/21 Started to build a 'updateNavbar' module. Not sure if it will keep 
     # Update: I want to be able to define a method, in the Navbar object, call 'updateNavbar', and call this method in other locations of the app. 
