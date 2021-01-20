@@ -23,35 +23,94 @@ class Feature {
     this.featureAdapter
       .getFeatureData()
       .then((data) => {
-        return data.cameras.map((camera) => {
+        return data.msa.cameras.map((camera) => {
           this.components.push(camera)
         })
       })
       .then(() => {
         this.renderComponents()
       })
+      .then((featureObj) => {
+        new NavBar().addHomeIcon(featureObj)
+      })
   }
   renderComponents() {
+    console.log("render components")
     const root = document.getElementById("root")
     const componentsContainer = document.createElement("div")
     componentsContainer.setAttribute("class", "components-container")
+    componentsContainer.setAttribute("id", "components-container")
     // Title div
     const titleDiv = document.createElement("div")
     titleDiv.setAttribute("class", "feature-title-div")
-    titleDiv.innerText = "Select CCU"
-    componentsContainer.appendChild(titleDiv)
-    this.components.map((component) => {
-      // Component Div
-      const componentDiv = document.createElement("div")
-      componentDiv.setAttribute("class", "component-div")
-      componentDiv.setAttribute("id", component.id)
-      componentDiv.innerText = component.id.toUpperCase()
+    if (this.selections.length === 2) {
+      console.log("selected monitors")
+      titleDiv.innerText = "Select Specialty"
+      this.components.map((component) => {
+        component.monitors.map((monitor) => {
+          console.log(monitor)
+        })
+      })
+      componentsContainer.appendChild(titleDiv)
+      // selection.monitors.map((component) => {
+      //   // Component Div
+      //   const componentDiv = document.createElement("div")
+      //   componentDiv.setAttribute("class", "component-div")
+      //   componentDiv.setAttribute("id", component.id)
+      //   componentDiv.innerText = component.id.toUpperCase()
+      //   // Load component div into component container
+      //   componentsContainer.appendChild(componentDiv)
+      //   // Load component container into root
+      //   root.appendChild(componentsContainer)
+      // })
+    } else if (this.selections.length === 1) {
+      titleDiv.innerText = "Select Monitor"
+      const selection = this.components.find(
+        (element) => element.id === this.selections[0]
+      )
+      componentsContainer.appendChild(titleDiv)
+      selection.monitors.map((component) => {
+        // Component Div
+        const componentDiv = document.createElement("div")
+        componentDiv.setAttribute("class", "component-div")
+        componentDiv.setAttribute("id", component.id)
+        componentDiv.innerText = component.id.toUpperCase()
+        // Load component div into component container
+        componentsContainer.appendChild(componentDiv)
+        // Load component container into root
+        root.appendChild(componentsContainer)
+      })
+    } else {
+      titleDiv.innerText = "Select CCU"
+      componentsContainer.appendChild(titleDiv)
+      this.components.map((component) => {
+        // Component Div
+        const componentDiv = document.createElement("div")
+        componentDiv.setAttribute("class", "component-div")
+        componentDiv.setAttribute("id", component.id)
+        componentDiv.innerText = component.id.toUpperCase()
+        // Load component div into component container
+        componentsContainer.appendChild(componentDiv)
+        // Load component container into root
+        root.appendChild(componentsContainer)
+      })
+    }
+    this.bindCameraSelectionEventListener()
+  }
 
-      // Load component div into component container
-      componentsContainer.appendChild(componentDiv)
+  bindCameraSelectionEventListener() {
+    const componentDiv = document.getElementsByClassName("component-div")
+    for (let item of componentDiv) {
+      item.addEventListener("click", () => {
+        console.log("click")
+        this.assignUsersSelectionAndResetFeature(item)
+      })
+    }
+  }
 
-      // Load component container into root
-      root.appendChild(componentsContainer)
-    })
+  assignUsersSelectionAndResetFeature(item) {
+    this.selections.push(item.id)
+    new ResetNavbarAndFeature().resetFeature()
+    this.renderComponents()
   }
 }

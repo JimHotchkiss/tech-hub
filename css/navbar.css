@@ -51,3 +51,7 @@
     opacity: 1;
     background-size: 30px;
   }
+
+  .navbar-home-icon:hover {
+    cursor: pointer;
+  }

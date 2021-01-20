@@ -37,6 +37,22 @@ This rebuild will leverage object oriented design, in order to make the code eas
     b. The feature components are then rendered to the DOM with the renderComponents() method
 6.) An instance method of updateNavbar() is instantiate. This is done by creating a new Navbar and calling on that class the 'updateNavbar()' class method.
     a.) This will update text, icons and even functionality, when necessary. 
+7.) When a use selects a ccu, monitor or specialty, the Feature method 'assignUsersSelectionAndResetFeature()' is called
+    a.) The method assigns the user selections to the instance variable 'selections'.
+        i.) The 'selection' variable keeps track of the users selection 
+            # Note - Perhaps I could use local storage for this 
+    b.) And then clears the HTML, and then the 'updateFeaturePage()' method is called
+        i.) The 'collections' variable is called, and the users selection is matched with the corresponding data
+        ii.) Then the 'renderComponents()' method is called
+    
+# ResetNavbarAndFeature class
+8.) The ResetNavbarAndFeature class handles the functionality of reseting the navbar and feature page.    
+    a.) The ResetNavbarAndFeature class has a couple instance methods
+        i.) 'resetNavbar()' - resets the HTML in the navbar
+        ii.) 'resetFeature()' - resets the HTML in the feature section
+        iii) 'renderNewLandingPage()' - this calls an instance of the class Landing page
+
+
 
 // Note: 1/15/21 Started to build a 'updateNavbar' module. Not sure if it will keep 
     # Update: I want to be able to define a method, in the Navbar object, call 'updateNavbar', and call this method in other locations of the app. 

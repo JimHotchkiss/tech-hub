@@ -1,22 +1,24 @@
-{"cameras" : [
-    {
-        "id": "1688", "pn":"1688-000-000"
-    },
-    {
-        "id": "1588", "pn":"1588-000-000"
-    },
-    {
-        "id": "precision", "pn":"precision-000-000"
-    },
-    {
-        "id": "1488", "pn":"1488-000-000"
-    },
-    {
-        "id": "1288", "pn":"1288-000-000"
-    },
-    {
-        "id": "flexible", "pn":"flexible-000-000"
-    }
- 
-    ]
- }
+{"msa":
+    {"cameras" : [
+        {
+            "id": "1688", "pn":"1688-000-000", "monitors":[{"id": "4K", "pn": "xxx-xxx-xxx", "name": "4K", "specialties": [  "Lap 1","Lap 2","Arthro 1","Arthro 2","ENT 1","ENT 2","ENT 3","Flexiscope","Cysto","Cysto 2","Laser", "Hystero"]}, {"id": "Vision Pro", "pn": "xxx-xxx-xxx", "name": "Vision Pro", "specialties":["Lap 1", "Lap 2"]}]
+        },
+        {
+            "id": "1588", "pn":"1588-000-000", "monitors":[{"id": "4K", "pn": "xxx-xxx-xxx", "name": "4K"}, {"id": "Vision Pro", "pn": "xxx-xxx-xxx", "name": "Vision Pro"}, {"id": "HDTV Wise", "pn": "xxx-xxx-xxx", "name": "HDTV Wise"}]
+        },
+        {
+            "id": "precision", "pn":"precision-000-000", "monitors":[{"id": "4K", "pn": "xxx-xxx-xxx", "name": "4K"}, {"id": "Vision Pro", "pn": "xxx-xxx-xxx", "name": "Vision Pro"}, {"id": "HDTV Wise", "pn": "xxx-xxx-xxx", "name": "HDTV Wise"}]
+        },
+        {
+            "id": "1488", "pn":"1488-000-000", "monitors":[{"id": "4K", "pn": "xxx-xxx-xxx", "name": "4K"}, {"id": "Vision Pro", "pn": "xxx-xxx-xxx", "name": "Vision Pro"}, {"id": "HDTV Wise", "pn": "xxx-xxx-xxx", "name": "HDTV Wise"}]
+        },
+        {
+            "id": "1288", "pn":"1288-000-000", "monitors":[{"id": "4K", "pn": "xxx-xxx-xxx", "name": "4K"}, {"id": "Vision Pro", "pn": "xxx-xxx-xxx", "name": "Vision Pro"}, {"id": "HDTV Wise", "pn": "xxx-xxx-xxx", "name": "HDTV Wise"}]
+        },
+        {
+            "id": "flexible", "pn":"flexible-000-000", "monitors":[{"id": "Vision Elect 21", "pn": "xxx-xxx-xxx", "name": "Vision Elect 21"},{"id": "Wise 19", "pn": "xxx-xxx-xxx", "name": "Wise 19"}, {"id": "Vision Pro", "pn": "xxx-xxx-xxx", "name": "Vision Pro"}, {"id": "HDTV Wise", "pn": "xxx-xxx-xxx", "name": "HDTV Wise"}]
+        }
+     
+        ]
+     }
+}

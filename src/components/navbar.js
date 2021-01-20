@@ -1,6 +1,15 @@
 class NavBar {
   constructor() {
-    // this.renderNavBar()
+    this.bindHomeIconEventListener()
+  }
+
+  bindHomeIconEventListener() {
+    const navbarHomeIcon = document.getElementById("navbar-home-icon")
+    if (navbarHomeIcon) {
+      navbarHomeIcon.addEventListener("click", () => {
+        new ResetNavbarAndFeature().renderNewLandingPage()
+      })
+    }
   }
 
   renderNavBar() {
@@ -8,6 +17,7 @@ class NavBar {
 
     const navbar = document.createElement("div")
     navbar.setAttribute("class", "navbar")
+    navbar.setAttribute("id", "navbar")
 
     const iconDiv = document.createElement("div")
     iconDiv.setAttribute("class", "icon-div")
@@ -57,14 +67,17 @@ class NavBar {
 
   addHomeIcon() {
     const iconTextSpanDiv = document.getElementById("icon-text-span-div")
+    iconTextSpanDiv.style.marginLeft = "32%"
     iconTextSpanDiv.insertAdjacentHTML(
       "afterend",
       '<div id="navbar-home-icon" class="navbar-home-icon"></div>'
     )
+    this.bindHomeIconEventListener()
   }
 
-  updateNavbarIcons(featureObj) {
-    console.log(featureObj)
+  addBackBtnIcon() {}
+
+  updateNavbarIcons() {
     const iconDiv = document.getElementById("icon-div")
     iconDiv.style.backgroundImage = ``
     iconDiv.style.width = "0px"
