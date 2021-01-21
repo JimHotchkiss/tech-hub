@@ -1,13 +1,21 @@
 .components-container {
  padding-top: 70px;
+ padding-bottom: 16px;
 }
 
 .feature-title-div {
     font-size: 32px;
     font-weight: 900;
-    margin: 24px auto;
+    margin: 0px auto;
+    margin-top: 24px;
     text-align: center;
     color: #ffb600;
+}
+
+.breadcrumbs-div {
+    text-align: center;
+    margin-top: 16px;
+    color: #fff;
 }
 
 .component-div {

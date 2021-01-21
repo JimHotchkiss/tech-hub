@@ -35,7 +35,6 @@ class Feature {
       })
   }
   renderComponents() {
-    console.log("render components")
     const root = document.getElementById("root")
     const componentsContainer = document.createElement("div")
     componentsContainer.setAttribute("class", "components-container")
@@ -43,32 +42,45 @@ class Feature {
     // Title div
     const titleDiv = document.createElement("div")
     titleDiv.setAttribute("class", "feature-title-div")
+    const breadCrumbs = document.createElement("div")
+    breadCrumbs.setAttribute("class", "breadcrumbs-div")
     if (this.selections.length === 2) {
-      console.log("selected monitors")
+      // Render Specialties
       titleDiv.innerText = "Select Specialty"
-      this.components.map((component) => {
-        component.monitors.map((monitor) => {
-          console.log(monitor)
-        })
-      })
+      breadCrumbs.innerText =
+        `CCU: ${this.selections[0]}` +
+        "\xa0\xa0\xa0\xa0" +
+        `Monitor: ${this.selections[1]}`
       componentsContainer.appendChild(titleDiv)
-      // selection.monitors.map((component) => {
-      //   // Component Div
-      //   const componentDiv = document.createElement("div")
-      //   componentDiv.setAttribute("class", "component-div")
-      //   componentDiv.setAttribute("id", component.id)
-      //   componentDiv.innerText = component.id.toUpperCase()
-      //   // Load component div into component container
-      //   componentsContainer.appendChild(componentDiv)
-      //   // Load component container into root
-      //   root.appendChild(componentsContainer)
-      // })
+      componentsContainer.appendChild(breadCrumbs)
+      // Filter correct CCU
+      const selectedCcu = this.components.find(
+        (component) => component.id === this.selections[0]
+      )
+      // Filter correct Monitor
+      const filteredSpecialites = selectedCcu.monitors.find(
+        (component) => component.id === this.selections[1]
+      )
+      // Render Specialites
+      filteredSpecialites.specialties.map((specialty) => {
+        // Component Div
+        const componentDiv = document.createElement("div")
+        componentDiv.setAttribute("class", "component-div")
+        componentDiv.setAttribute("id", specialty)
+        componentDiv.innerText = specialty.toUpperCase()
+        // Load component div into component container
+        componentsContainer.appendChild(componentDiv)
+        // Load component container into root
+        root.appendChild(componentsContainer)
+      })
     } else if (this.selections.length === 1) {
       titleDiv.innerText = "Select Monitor"
+      breadCrumbs.innerText = `CCU: ${this.selections[0]}`
+      componentsContainer.appendChild(titleDiv)
+      componentsContainer.appendChild(breadCrumbs)
       const selection = this.components.find(
         (element) => element.id === this.selections[0]
       )
-      componentsContainer.appendChild(titleDiv)
       selection.monitors.map((component) => {
         // Component Div
         const componentDiv = document.createElement("div")
