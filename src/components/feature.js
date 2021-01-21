@@ -42,8 +42,10 @@ class Feature {
     // Title div
     const titleDiv = document.createElement("div")
     titleDiv.setAttribute("class", "feature-title-div")
+    // Breadcrumbs div
     const breadCrumbs = document.createElement("div")
     breadCrumbs.setAttribute("class", "breadcrumbs-div")
+
     if (this.selections.length === 2) {
       // Render Specialties
       titleDiv.innerText = "Select Specialty"
@@ -66,8 +68,8 @@ class Feature {
         // Component Div
         const componentDiv = document.createElement("div")
         componentDiv.setAttribute("class", "component-div")
-        componentDiv.setAttribute("id", specialty)
-        componentDiv.innerText = specialty.toUpperCase()
+        componentDiv.setAttribute("id", specialty.name)
+        componentDiv.innerText = specialty.name.toUpperCase()
         // Load component div into component container
         componentsContainer.appendChild(componentDiv)
         // Load component container into root
@@ -92,6 +94,8 @@ class Feature {
         // Load component container into root
         root.appendChild(componentsContainer)
       })
+    } else if (this.selections.length === 3) {
+      console.log(this.selections)
     } else {
       titleDiv.innerText = "Select CCU"
       componentsContainer.appendChild(titleDiv)
