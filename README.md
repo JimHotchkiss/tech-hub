@@ -51,7 +51,11 @@ This rebuild will leverage object oriented design, in order to make the code eas
         i.) 'resetNavbar()' - resets the HTML in the navbar
         ii.) 'resetFeature()' - resets the HTML in the feature section
         iii) 'renderNewLandingPage()' - this calls an instance of the class Landing page
-
+# FilterSelection class
+9.) FilterSelection class has three instance methods - This class is currently called in the Feature class
+    a.) filterCcu filters throught the components that fetched when the Feature component loads, and finds the ccu that the user has selected
+    b.) filterMonitor performs the same task
+    c.) filterSpecialty aslo filters and find the data of the selected specialty
 
 
 // Note: 1/15/21 Started to build a 'updateNavbar' module. Not sure if it will keep 

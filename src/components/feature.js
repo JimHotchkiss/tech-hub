@@ -55,16 +55,19 @@ class Feature {
         `Monitor: ${this.selections[1]}`
       componentsContainer.appendChild(titleDiv)
       componentsContainer.appendChild(breadCrumbs)
+
       // Filter correct CCU
-      const selectedCcu = this.components.find(
-        (component) => component.id === this.selections[0]
+      const selectedCcu = new FilterSelection().filterCcu(
+        this.components,
+        this.selections
       )
       // Filter correct Monitor
-      const filteredSpecialites = selectedCcu.monitors.find(
-        (component) => component.id === this.selections[1]
+      const selectedMonitor = new FilterSelection().filterMonitor(
+        selectedCcu.monitors,
+        this.selections
       )
       // Render Specialites
-      filteredSpecialites.specialties.map((specialty) => {
+      selectedMonitor.specialties.map((specialty) => {
         // Component Div
         const componentDiv = document.createElement("div")
         componentDiv.setAttribute("class", "component-div")
@@ -95,7 +98,26 @@ class Feature {
         root.appendChild(componentsContainer)
       })
     } else if (this.selections.length === 3) {
-      console.log(this.selections)
+      // Filter correct CCU
+      const selectedCcu = new FilterSelection().filterCcu(
+        this.components,
+        this.selections
+      )
+      // Filter correct Monitor
+      const selectedMonitor = new FilterSelection().filterMonitor(
+        selectedCcu.monitors,
+        this.selections
+      )
+      // Filter correct Specialty
+      const selectedSpecialtySettings = new FilterSelection().filterSpecialties(
+        selectedMonitor.specialties,
+        this.selections
+      )
+
+      console.log(
+        selectedSpecialtySettings.ccuSettings,
+        selectedSpecialtySettings.monitorSettings
+      )
     } else {
       titleDiv.innerText = "Select CCU"
       componentsContainer.appendChild(titleDiv)
@@ -118,7 +140,6 @@ class Feature {
     const componentDiv = document.getElementsByClassName("component-div")
     for (let item of componentDiv) {
       item.addEventListener("click", () => {
-        console.log("click")
         this.assignUsersSelectionAndResetFeature(item)
       })
     }
